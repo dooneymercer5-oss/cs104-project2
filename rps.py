@@ -308,7 +308,9 @@ def announce_winner(winner_name):
     else:
         print(f"Congratulations {winner_name}!")
         print(f"You won {COURSE_NAME} Rock, Paper, Scissors!") 
-  def do_game(p1_name, p2_name, game_type):
+        
+        
+def do_game(p1_name, p2_name, game_type):
     """Plays three rounds and returns the name of the game winner."""
 
     if game_type == PLAY_RPSLS:

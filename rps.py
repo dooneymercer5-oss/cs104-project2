@@ -265,7 +265,7 @@ def get_name(player_number):
     return name
 def get_menu_choice():
     """Displays the menu and returns a valid mwnu choice."""
-    while true:
+    while True:
         print_menu()
         choice = input("choice --> ")
 

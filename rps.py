@@ -301,8 +301,7 @@ def do_round(p1_name, p2_nae):
     else:
         return PLAYER_2
 
-
-   def announce_winner(winner_name):
+def announce_winner(winner_name):
     """Prints the game winner or announces that there was no winner."""
     if winner_name == "":
         print("No winner!")

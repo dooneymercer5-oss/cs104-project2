@@ -208,11 +208,22 @@ QUIT_CHOICE = 3
 
 
 def rps():
-    """
-    Purpose: Runs the whole program. Write this function LAST.
-    """
-    # TODO: implement
-    pass
+    """Runs the whole Rock, Paper, Scissors program.  """
+    print_initial_header()
+
+    p1_name = get_name(PLAYER_1)
+    p2_name = get_name(PLAYER_2)
+
+    while True:
+        choice = get_menu_choice()
+
+        if choice == QUIT_CHOICE:
+            break
+
+        winner_name = do_game(p1_name, p2_name, choice)
+        announce_winner(winner_name)
+
+    print_closer()
 
 
 # ***********************************************************************
@@ -289,7 +300,45 @@ def do_round(p1_name, p2_nae):
         return PLAYER_1
     else:
         return PLAYER_2
-    
+
+
+   def announce_winner(winner_name):
+    """Prints the game winner or announces that there was no winner."""
+    if winner_name == "":
+        print("No winner!")
+    else:
+        print(f"Congratulations {winner_name}!")
+        print(f"You won {COURSE_NAME} Rock, Paper, Scissors!") 
+  def do_game(p1_name, p2_name, game_type):
+    """Plays three rounds and returns the name of the game winner."""
+
+    if game_type == PLAY_RPSLS:
+        print("Under Construction")
+        return ""
+
+    p1_wins = 0
+    p2_wins = 0
+
+    for round_number in range(MAX_ROUNDS):
+        result = do_round(p1_name, p2_name)
+
+        if result == PLAYER_1:
+            p1_wins += 1
+            announce_round_winner(p1_name)
+
+        elif result == PLAYER_2:
+            p2_wins += 1
+            announce_round_winner(p2_name)
+
+        else:
+            announce_round_winner("")
+
+    if p1_wins > p2_wins:
+        return p1_name
+    elif p2_wins > p1_wins:
+        return p2_name
+    else:
+        return ""
         
 # ***********************************************************************
 # DO NOT modify the four functions below.

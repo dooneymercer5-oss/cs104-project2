@@ -242,7 +242,55 @@ def is_round_winner(move, opponent_move):
         return True
     else:
         return False
+def get_name(player_number):
+    """ Gets the player's name or returns a default name if empty."""
+    name = input(f"player {player_number}, enter your name: ")
 
+    if name =="":
+        print_error_message(ERROR_NAME)
+
+        if player_number == PLAYER_1:
+            return DEFAULT_NAME_2
+    return name
+def get_menu_choice():
+    """Displays the menu and returns a valid mwnu choice."""
+    while true:
+        print_menu()
+        choice = input("choice --> ")
+
+        if choice == "1" or choice =="2" or choice == "3":
+            return int(choice)
+        else:
+            print("invalid menu choice")
+def get_move(player_name):
+    """Gets a player's move and uses rock if the move is invalid."""
+    move = input(f"{player_name}, enter your move: ")
+
+    if is_move_good(move):
+        return move
+    else:
+        print_erroe_message(ERROR_MOVE)
+        return DEFAULT_MOVE
+def announce_round_winner(winner_name):
+    "prints the winner of the round or announces a draw."""
+    if winner_name == "":
+        print("this round is a drwa!")
+    else:
+        print(f"{winner_name} wins the round!")
+
+def do_round(p1_name, p2_nae):
+    """palys one round and returns the result."""
+    p1_move = get_move(P1_name)
+    p2_move = get_move(P2_name)
+
+    if p1_move.lower() == p2_move.lower():
+        return DRAW
+    elif is_round_winner(P1_move, P2_move):
+        return PLAYER_1
+    else:
+        return PLAYER_2
+    
+        
 # ***********************************************************************
 # DO NOT modify the four functions below.
 # ***********************************************************************

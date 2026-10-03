@@ -4,12 +4,12 @@ rps.py
 Redistributed and modified with permission from the
 EECS Department at The University of Michigan, Ann Arbor
 
-Name: TO FILL IN (your name)
+Name: Adrion Mercer
 
 CS 104: Project 2
 FALL 2026
 
-Description: TO FILL IN (one or two sentences about what this program does)
+Description: A two-player Rock, Paper, Scissors game that plays three rounds and determines the winner.
 """
 
 # ***********************************************************************
@@ -221,12 +221,27 @@ def rps():
 # ***********************************************************************
 
 def is_move_good(move):
-    """TO FILL IN: describe what this function does in one line."""
-    # TODO: implement
+    """Returns True when move is rock, paper, or scissors."""
+    move = move.lower() 
 
-    # NOTE: replace this return statement!!!
-    return True
+    if move == ROCK or move == PAPER or move == SCISSORS:
+        return True
+    else:
+        return False
 
+def is_round_winner(move, opponent_move):
+    """Returns True if the first move beats the opponent's move."""
+    move = move.lower()
+    opponent_move = opponent_move.lower()
+
+    if move == ROCK and opponent_move == SCISSORS:
+        return True
+    elif move == PAPER and opponent_move == ROCK:
+        return True
+    elif move == SCISSORS and opponent_move == PAPER:
+        return True
+    else:
+        return False
 
 # ***********************************************************************
 # DO NOT modify the four functions below.

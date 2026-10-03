@@ -289,14 +289,14 @@ def announce_round_winner(winner_name):
     else:
         print(f"{winner_name} wins the round!")
 
-def do_round(p1_name, p2_nae):
+def do_round(p1_name, p2_name):
     """palys one round and returns the result."""
-    p1_move = get_move(P1_name)
-    p2_move = get_move(P2_name)
+    p1_move = get_move(p1_name)
+    p2_move = get_move(p2_name)
 
     if p1_move.lower() == p2_move.lower():
         return DRAW
-    elif is_round_winner(P1_move, P2_move):
+    elif is_round_winner(p1_move, p2_move):
         return PLAYER_1
     else:
         return PLAYER_2

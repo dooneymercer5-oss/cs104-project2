@@ -280,7 +280,7 @@ def get_move(player_name):
     if is_move_good(move):
         return move
     else:
-        print_erroe_message(ERROR_MOVE)
+        print_error_message(ERROR_MOVE)
         return DEFAULT_MOVE
 def announce_round_winner(winner_name):
     "prints the winner of the round or announces a draw."""

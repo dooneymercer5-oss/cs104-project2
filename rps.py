@@ -261,10 +261,12 @@ def get_name(player_number):
         print_error_message(ERROR_NAME)
 
         if player_number == PLAYER_1:
+            return DEFAULT_NAME_1
+        else:
             return DEFAULT_NAME_2
     return name
 def get_menu_choice():
-    """Displays the menu and returns a valid mwnu choice."""
+    """Displays the menu and returns a valid menu choice."""
     while True:
         print_menu()
         choice = input("choice --> ")
@@ -285,12 +287,12 @@ def get_move(player_name):
 def announce_round_winner(winner_name):
     "prints the winner of the round or announces a draw."""
     if winner_name == "":
-        print("this round is a drwa!")
+        print("This round is a drwa!")
     else:
         print(f"{winner_name} wins the round!")
 
 def do_round(p1_name, p2_name):
-    """palys one round and returns the result."""
+    """plays one round and returns the result."""
     p1_move = get_move(p1_name)
     p2_move = get_move(p2_name)
 
